@@ -1,92 +1,150 @@
-/* ================================
+/* =====================================================
+   ELN — OPPORTUNITIES
+===================================================== */
+
+
+/* =====================================================
    DARK MODE
-================================ */
+===================================================== */
 
 const themeToggle = document.getElementById("themeToggle");
 const themeIcon = document.getElementById("themeIcon");
 
 const savedTheme = localStorage.getItem("eln-theme");
 
+
 if (savedTheme === "dark") {
+
     document.body.classList.add("dark");
+
     themeIcon.textContent = "☀";
+
+} else {
+
+    themeIcon.textContent = "☾";
+
 }
+
+
+/* THEME TOGGLE */
 
 themeToggle.addEventListener("click", () => {
 
     document.body.classList.toggle("dark");
 
-    const isDark = document.body.classList.contains("dark");
+    const isDark =
+        document.body.classList.contains("dark");
+
 
     if (isDark) {
+
         themeIcon.textContent = "☀";
-        localStorage.setItem("eln-theme", "dark");
+
+        localStorage.setItem(
+            "eln-theme",
+            "dark"
+        );
+
     } else {
+
         themeIcon.textContent = "☾";
-        localStorage.setItem("eln-theme", "light");
+
+        localStorage.setItem(
+            "eln-theme",
+            "light"
+        );
+
     }
 
 });
 
 
-/* ================================
-   SEARCH + FILTER
-================================ */
 
-const searchInput = document.getElementById("searchInput");
-const filters = document.querySelectorAll(".filter");
-const cards = document.querySelectorAll(".opportunity-card");
-const noResults = document.getElementById("noResults");
+/* =====================================================
+   SEARCH + FILTER
+===================================================== */
+
+const searchInput =
+    document.getElementById("searchInput");
+
+const filters =
+    document.querySelectorAll(".filter");
+
+const cards =
+    document.querySelectorAll(".opportunity-card");
+
+const noResults =
+    document.getElementById("noResults");
+
 
 let currentCategory = "all";
 
 
+
+/* =====================================================
+   FILTER OPPORTUNITIES
+===================================================== */
+
 function filterOpportunities() {
 
-    const searchTerm = searchInput.value
-        .toLowerCase()
-        .trim();
+    const searchTerm =
+        searchInput.value
+            .toLowerCase()
+            .trim();
+
 
     let visibleCards = 0;
 
+
     cards.forEach(card => {
 
-        const category = card.dataset.category;
-        const title = card.dataset.title.toLowerCase();
-        const text = card.textContent.toLowerCase();
+        const category =
+            card.dataset.category
+                .toLowerCase();
+
+
+        const title =
+            card.dataset.title
+                .toLowerCase();
+
+
+        /*
+            Search ALL visible text inside the card.
+
+            This means the search can find:
+            - title
+            - description
+            - location
+            - audience
+            - deadline
+            - category
+        */
+
+        const cardText =
+            card.textContent
+                .toLowerCase();
+
 
         const matchesCategory =
             currentCategory === "all" ||
             category === currentCategory;
 
+
         const matchesSearch =
             searchTerm === "" ||
             title.includes(searchTerm) ||
-            text.includes(searchTerm);
+            cardText.includes(searchTerm);
 
-        if (matchesCategory && matchesSearch) {
+
+        if (
+            matchesCategory &&
+            matchesSearch
+        ) {
 
             card.style.display = "flex";
 
-            // Small animation when cards appear
-            card.animate(
-                [
-                    {
-                        opacity: 0,
-                        transform: "translateY(8px)"
-                    },
-                    {
-                        opacity: 1,
-                        transform: "translateY(0)"
-                    }
-                ],
-                {
-                    duration: 220,
-                    easing: "ease-out"
-                }
-            );
-
             visibleCards++;
+
 
         } else {
 
@@ -97,28 +155,62 @@ function filterOpportunities() {
     });
 
 
+    /* NO RESULTS */
+
     if (visibleCards === 0) {
+
         noResults.style.display = "block";
+
     } else {
+
         noResults.style.display = "none";
+
     }
 
 }
 
 
-/* CATEGORY BUTTONS */
+
+/* =====================================================
+   CATEGORY BUTTONS
+===================================================== */
 
 filters.forEach(filter => {
 
     filter.addEventListener("click", () => {
 
+
+        /*
+            Remove active state
+            from every button.
+        */
+
         filters.forEach(button => {
+
             button.classList.remove("active");
+
         });
+
+
+        /*
+            Add active state
+            to clicked button.
+        */
 
         filter.classList.add("active");
 
-        currentCategory = filter.dataset.category;
+
+        /*
+            Get selected category.
+        */
+
+        currentCategory =
+            filter.dataset.category;
+
+
+        /*
+            Run filtering.
+        */
 
         filterOpportunities();
 
@@ -127,7 +219,10 @@ filters.forEach(filter => {
 });
 
 
-/* SEARCH */
+
+/* =====================================================
+   SEARCH
+===================================================== */
 
 searchInput.addEventListener(
     "input",
@@ -135,11 +230,14 @@ searchInput.addEventListener(
 );
 
 
-/* ================================
-   BOOKMARKS
-================================ */
 
-const bookmarks = document.querySelectorAll(".bookmark");
+/* =====================================================
+   BOOKMARKS / HEARTS
+===================================================== */
+
+const bookmarks =
+    document.querySelectorAll(".bookmark");
+
 
 bookmarks.forEach(button => {
 
@@ -147,10 +245,17 @@ bookmarks.forEach(button => {
 
         button.classList.toggle("saved");
 
-        if (button.classList.contains("saved")) {
+
+        if (
+            button.classList.contains("saved")
+        ) {
+
             button.textContent = "♥";
+
         } else {
+
             button.textContent = "♡";
+
         }
 
     });
@@ -158,12 +263,17 @@ bookmarks.forEach(button => {
 });
 
 
-/* ================================
-   FILTER MOBILE TOGGLE
-================================ */
 
-const filterButton = document.getElementById("filterButton");
-const filtersContainer = document.getElementById("filters");
+/* =====================================================
+   MOBILE FILTER TOGGLE
+===================================================== */
+
+const filterButton =
+    document.getElementById("filterButton");
+
+const filtersContainer =
+    document.getElementById("filters");
+
 
 filterButton.addEventListener("click", () => {
 
