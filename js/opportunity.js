@@ -1,119 +1,172 @@
-const params = new URLSearchParams(window.location.search);
-const id = Number(params.get("id"));
+/* ================================
+   DARK MODE
+================================ */
 
-async function loadOpportunity() {
+const themeToggle = document.getElementById("themeToggle");
+const themeIcon = document.getElementById("themeIcon");
 
-    const response = await fetch("data/opportunities.json");
-    const opportunities = await response.json();
+const savedTheme = localStorage.getItem("eln-theme");
 
-    const opportunity = opportunities.find(item => item.id === id);
+if (savedTheme === "dark") {
+    document.body.classList.add("dark");
+    themeIcon.textContent = "☀";
+}
 
-    if (!opportunity) {
+themeToggle.addEventListener("click", () => {
 
-        document.getElementById("opportunityContainer").innerHTML = `
-            <h1>Opportunity Not Found</h1>
-            <p>This opportunity does not exist.</p>
-        `;
-        return;
+    document.body.classList.toggle("dark");
 
+    const isDark = document.body.classList.contains("dark");
+
+    if (isDark) {
+        themeIcon.textContent = "☀";
+        localStorage.setItem("eln-theme", "dark");
+    } else {
+        themeIcon.textContent = "☾";
+        localStorage.setItem("eln-theme", "light");
     }
 
-    const deadline = new Date(opportunity.deadline);
-    const today = new Date();
+});
 
-    let status = "Open";
-    let statusClass = "open";
 
-    if (deadline < today) {
+/* ================================
+   SEARCH + FILTER
+================================ */
 
-        status = "Closed";
-        statusClass = "closed";
+const searchInput = document.getElementById("searchInput");
+const filters = document.querySelectorAll(".filter");
+const cards = document.querySelectorAll(".opportunity-card");
+const noResults = document.getElementById("noResults");
 
-    } else {
+let currentCategory = "all";
 
-        const daysLeft = Math.ceil((deadline - today) / (1000 * 60 * 60 * 24));
 
-        if (daysLeft <= 7) {
+function filterOpportunities() {
 
-            status = "Closing Soon";
-            statusClass = "soon";
+    const searchTerm = searchInput.value
+        .toLowerCase()
+        .trim();
+
+    let visibleCards = 0;
+
+    cards.forEach(card => {
+
+        const category = card.dataset.category;
+        const title = card.dataset.title.toLowerCase();
+        const text = card.textContent.toLowerCase();
+
+        const matchesCategory =
+            currentCategory === "all" ||
+            category === currentCategory;
+
+        const matchesSearch =
+            searchTerm === "" ||
+            title.includes(searchTerm) ||
+            text.includes(searchTerm);
+
+        if (matchesCategory && matchesSearch) {
+
+            card.style.display = "flex";
+
+            // Small animation when cards appear
+            card.animate(
+                [
+                    {
+                        opacity: 0,
+                        transform: "translateY(8px)"
+                    },
+                    {
+                        opacity: 1,
+                        transform: "translateY(0)"
+                    }
+                ],
+                {
+                    duration: 220,
+                    easing: "ease-out"
+                }
+            );
+
+            visibleCards++;
+
+        } else {
+
+            card.style.display = "none";
 
         }
 
+    });
+
+
+    if (visibleCards === 0) {
+        noResults.style.display = "block";
+    } else {
+        noResults.style.display = "none";
     }
-
-    document.title = opportunity.title + " | ELN";
-
-    document.getElementById("opportunityContainer").innerHTML = `
-
-<div class="opportunity-card">
-
-<div class="category">
-
-${opportunity.category}
-
-</div>
-
-<h1>
-
-${opportunity.title}
-
-</h1>
-
-<p>
-
-${opportunity.description}
-
-</p>
-
-<div class="opportunity-meta">
-
-<div class="meta-item">
-
-<strong>Country</strong>
-
-<span>${opportunity.country}</span>
-
-</div>
-
-<div class="meta-item">
-
-<strong>Deadline</strong>
-
-<span>${deadline.toLocaleDateString()}</span>
-
-</div>
-
-<div class="meta-item">
-
-<strong>Status</strong>
-
-<span class="${statusClass}">${status}</span>
-
-</div>
-
-</div>
-
-<h2>Description</h2>
-
-<p>
-
-${opportunity.description}
-
-</p>
-
-<h2>Official Website</h2>
-
-<a href="${opportunity.website}" target="_blank" class="hero-button">
-
-Visit Official Website →
-
-</a>
-
-</div>
-
-`;
 
 }
 
-loadOpportunity();
+
+/* CATEGORY BUTTONS */
+
+filters.forEach(filter => {
+
+    filter.addEventListener("click", () => {
+
+        filters.forEach(button => {
+            button.classList.remove("active");
+        });
+
+        filter.classList.add("active");
+
+        currentCategory = filter.dataset.category;
+
+        filterOpportunities();
+
+    });
+
+});
+
+
+/* SEARCH */
+
+searchInput.addEventListener(
+    "input",
+    filterOpportunities
+);
+
+
+/* ================================
+   BOOKMARKS
+================================ */
+
+const bookmarks = document.querySelectorAll(".bookmark");
+
+bookmarks.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        button.classList.toggle("saved");
+
+        if (button.classList.contains("saved")) {
+            button.textContent = "♥";
+        } else {
+            button.textContent = "♡";
+        }
+
+    });
+
+});
+
+
+/* ================================
+   FILTER MOBILE TOGGLE
+================================ */
+
+const filterButton = document.getElementById("filterButton");
+const filtersContainer = document.getElementById("filters");
+
+filterButton.addEventListener("click", () => {
+
+    filtersContainer.classList.toggle("show");
+
+});
