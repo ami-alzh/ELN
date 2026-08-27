@@ -1,5 +1,5 @@
 /* =====================================================
-   OPPORTUNITIES PAGE
+   ELN — OPPORTUNITIES PAGE
 ===================================================== */
 
 
@@ -13,9 +13,7 @@
     padding: 0;
 }
 
-
 :root {
-
     --blue: #5377ff;
     --blue-dark: #4567ed;
 
@@ -30,7 +28,6 @@
 
     --shadow:
         0 15px 45px rgba(50, 70, 140, 0.08);
-
 }
 
 
@@ -40,85 +37,83 @@ html {
 
 
 body {
-
     font-family: "Inter", sans-serif;
-
-    color: var(--text);
-
-    min-height: 100vh;
 
     background:
         radial-gradient(
             circle at 50% 0%,
-            rgba(116, 91, 255, 0.10),
+            rgba(130, 100, 255, 0.12),
             transparent 38%
         ),
         linear-gradient(
             180deg,
             #faf9ff 0%,
-            #ffffff 42%,
+            #ffffff 45%,
             #ffffff 100%
         );
+
+    color: var(--text);
+
+    min-height: 100vh;
 
     transition:
         background 0.3s ease,
         color 0.3s ease;
-
 }
 
 
 /* =====================================================
-   NAVBAR
+   HEADER
+   IMPORTANT:
+   Uses your ORIGINAL header structure
 ===================================================== */
 
-.navbar {
+.header {
 
     width: 100%;
 
     height: 112px;
 
-    padding: 0 5.2%;
+    background:
+        rgba(255, 255, 255, 0.92);
 
-    display: flex;
-    align-items: center;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    border-bottom:
+        1px solid rgba(230, 232, 240, 0.7);
 
     position: sticky;
 
     top: 0;
 
     z-index: 1000;
-
-    background:
-        rgba(255, 255, 255, 0.92);
-
-    backdrop-filter: blur(15px);
-
-    -webkit-backdrop-filter: blur(15px);
-
-    border-bottom:
-        1px solid rgba(230, 232, 240, 0.7);
-
 }
 
 
-.navbar-inner {
+/* HEADER CONTAINER */
+
+.header .container {
 
     width: 100%;
+
+    height: 100%;
+
+    padding: 0 5.2%;
 
     display: flex;
 
     align-items: center;
 
     justify-content: space-between;
-
 }
 
 
 /* =====================================================
-   BRAND
+   LOGO
 ===================================================== */
 
-.brand {
+.header .logo {
 
     display: flex;
 
@@ -131,18 +126,19 @@ body {
     color: var(--text);
 
     flex-shrink: 0;
-
 }
 
 
-.logo {
+.header .logo-box {
 
     width: 58px;
+
     height: 58px;
 
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
     background:
@@ -164,10 +160,11 @@ body {
         0 10px 25px
         rgba(83, 119, 255, 0.2);
 
+    flex-shrink: 0;
 }
 
 
-.brand-text h1 {
+.header .logo h2 {
 
     font-size: 30px;
 
@@ -176,11 +173,10 @@ body {
     font-weight: 800;
 
     letter-spacing: -1px;
-
 }
 
 
-.brand-text span {
+.header .logo span {
 
     display: block;
 
@@ -189,7 +185,6 @@ body {
     font-size: 14px;
 
     color: #818493;
-
 }
 
 
@@ -197,7 +192,7 @@ body {
    NAVIGATION
 ===================================================== */
 
-nav {
+.header nav {
 
     display: flex;
 
@@ -210,11 +205,10 @@ nav {
     margin-right: auto;
 
     padding-left: 80px;
-
 }
 
 
-nav a {
+.header nav a {
 
     position: relative;
 
@@ -232,25 +226,22 @@ nav a {
 
     transition:
         color 0.2s ease;
-
 }
 
 
-nav a:hover {
+.header nav a:hover {
 
     color: var(--blue);
-
 }
 
 
-nav a.active {
+.header nav a.active {
 
     color: var(--blue);
-
 }
 
 
-nav a.active::after {
+.header nav a.active::after {
 
     content: "";
 
@@ -269,7 +260,6 @@ nav a.active::after {
     background: var(--blue);
 
     border-radius: 50%;
-
 }
 
 
@@ -277,7 +267,7 @@ nav a.active::after {
    THEME BUTTON
 ===================================================== */
 
-.theme-toggle {
+.header #themeToggle {
 
     width: 58px;
 
@@ -310,25 +300,20 @@ nav a.active::after {
     transition:
         transform 0.25s ease,
         background 0.25s ease;
-
 }
 
 
-.theme-toggle:hover {
+.header #themeToggle:hover {
 
     transform:
         rotate(15deg)
         scale(1.05);
-
 }
 
 
-.theme-toggle span {
-
-    display: block;
+.header #themeToggle span {
 
     line-height: 1;
-
 }
 
 
@@ -349,7 +334,6 @@ nav a.active::after {
 
     text-align:
         center;
-
 }
 
 
@@ -368,7 +352,7 @@ nav a.active::after {
         12px 20px;
 
     background:
-        rgba(255, 255, 255, 0.8);
+        rgba(255, 255, 255, 0.85);
 
     border:
         1px solid var(--border);
@@ -388,7 +372,6 @@ nav a.active::after {
     box-shadow:
         0 8px 25px
         rgba(40, 50, 100, 0.05);
-
 }
 
 
@@ -408,7 +391,6 @@ nav a.active::after {
 
     font-weight:
         800;
-
 }
 
 
@@ -419,7 +401,6 @@ nav a.active::after {
 
     color:
         var(--blue);
-
 }
 
 
@@ -439,12 +420,11 @@ nav a.active::after {
 
     line-height:
         1.8;
-
 }
 
 
 /* =====================================================
-   OPPORTUNITIES SECTION
+   OPPORTUNITY SECTION
 ===================================================== */
 
 .opportunity-section {
@@ -457,7 +437,6 @@ nav a.active::after {
 
     padding-bottom:
         100px;
-
 }
 
 
@@ -472,7 +451,6 @@ nav a.active::after {
 
     gap:
         14px;
-
 }
 
 
@@ -509,7 +487,6 @@ nav a.active::after {
     transition:
         border-color 0.2s ease,
         box-shadow 0.2s ease;
-
 }
 
 
@@ -521,7 +498,6 @@ nav a.active::after {
     box-shadow:
         0 8px 30px
         rgba(83, 119, 255, 0.10);
-
 }
 
 
@@ -535,7 +511,6 @@ nav a.active::after {
 
     margin-right:
         12px;
-
 }
 
 
@@ -561,7 +536,6 @@ nav a.active::after {
 
     font-size:
         15px;
-
 }
 
 
@@ -569,7 +543,6 @@ nav a.active::after {
 
     color:
         #9a9eab;
-
 }
 
 
@@ -620,7 +593,6 @@ nav a.active::after {
 
     transition:
         0.2s ease;
-
 }
 
 
@@ -631,7 +603,6 @@ nav a.active::after {
 
     color:
         var(--blue);
-
 }
 
 
@@ -649,7 +620,6 @@ nav a.active::after {
 
     margin:
         22px 0 32px;
-
 }
 
 
@@ -684,7 +654,6 @@ nav a.active::after {
 
     transition:
         0.2s ease;
-
 }
 
 
@@ -695,7 +664,6 @@ nav a.active::after {
 
     color:
         var(--blue);
-
 }
 
 
@@ -713,7 +681,6 @@ nav a.active::after {
     box-shadow:
         0 7px 18px
         rgba(83, 119, 255, 0.2);
-
 }
 
 
@@ -731,12 +698,11 @@ nav a.active::after {
 
     gap:
         20px;
-
 }
 
 
 /* =====================================================
-   CARDS
+   OPPORTUNITY CARD
 ===================================================== */
 
 .opportunity-card {
@@ -769,7 +735,6 @@ nav a.active::after {
         transform 0.25s ease,
         box-shadow 0.25s ease,
         border-color 0.25s ease;
-
 }
 
 
@@ -784,7 +749,6 @@ nav a.active::after {
 
     border-color:
         rgba(83, 119, 255, 0.3);
-
 }
 
 
@@ -802,9 +766,12 @@ nav a.active::after {
 
     align-items:
         center;
-
 }
 
+
+/* =====================================================
+   CATEGORY
+===================================================== */
 
 .category {
 
@@ -825,7 +792,6 @@ nav a.active::after {
 
     letter-spacing:
         0.4px;
-
 }
 
 
@@ -836,7 +802,6 @@ nav a.active::after {
 
     color:
         #5273ee;
-
 }
 
 
@@ -847,7 +812,6 @@ nav a.active::after {
 
     color:
         #7660df;
-
 }
 
 
@@ -858,7 +822,6 @@ nav a.active::after {
 
     color:
         #32947c;
-
 }
 
 
@@ -869,12 +832,11 @@ nav a.active::after {
 
     color:
         #d8793e;
-
 }
 
 
 /* =====================================================
-   HEART / BOOKMARK
+   BOOKMARK / HEART
 ===================================================== */
 
 .bookmark {
@@ -903,7 +865,6 @@ nav a.active::after {
     transition:
         color 0.2s ease,
         transform 0.2s ease;
-
 }
 
 
@@ -914,7 +875,6 @@ nav a.active::after {
 
     transform:
         scale(1.15);
-
 }
 
 
@@ -922,7 +882,6 @@ nav a.active::after {
 
     color:
         #ff3f5f;
-
 }
 
 
@@ -930,7 +889,6 @@ nav a.active::after {
 
     color:
         #ff294d;
-
 }
 
 
@@ -951,7 +909,6 @@ nav a.active::after {
 
     letter-spacing:
         -0.5px;
-
 }
 
 
@@ -968,7 +925,6 @@ nav a.active::after {
 
     line-height:
         1.7;
-
 }
 
 
@@ -989,7 +945,6 @@ nav a.active::after {
 
     margin-top:
         18px;
-
 }
 
 
@@ -1009,7 +964,6 @@ nav a.active::after {
 
     font-size:
         11px;
-
 }
 
 
@@ -1026,7 +980,7 @@ nav a.active::after {
         space-between;
 
     align-items:
-        end;
+        flex-end;
 
     margin-top:
         auto;
@@ -1036,7 +990,6 @@ nav a.active::after {
 
     border-top:
         1px solid var(--border);
-
 }
 
 
@@ -1053,7 +1006,6 @@ nav a.active::after {
 
     margin-bottom:
         4px;
-
 }
 
 
@@ -1064,7 +1016,6 @@ nav a.active::after {
 
     font-weight:
         600;
-
 }
 
 
@@ -1082,7 +1033,6 @@ nav a.active::after {
 
     padding:
         70px 20px;
-
 }
 
 
@@ -1090,7 +1040,6 @@ nav a.active::after {
 
     font-size:
         40px;
-
 }
 
 
@@ -1101,7 +1050,6 @@ nav a.active::after {
 
     font-size:
         22px;
-
 }
 
 
@@ -1112,7 +1060,6 @@ nav a.active::after {
 
     color:
         var(--muted);
-
 }
 
 
@@ -1136,7 +1083,6 @@ footer {
 
     font-size:
         12px;
-
 }
 
 
@@ -1167,47 +1113,42 @@ body.dark {
     background:
         radial-gradient(
             circle at 50% 0%,
-            rgba(116, 91, 255, 0.12),
+            rgba(116, 91, 255, 0.13),
             transparent 38%
         ),
         #101116;
-
 }
 
 
-body.dark .navbar {
+body.dark .header {
 
     background:
         rgba(16, 17, 22, 0.92);
 
     border-bottom-color:
         rgba(70, 74, 90, 0.5);
-
 }
 
 
-body.dark nav a {
+body.dark .header nav a {
 
     color:
         #c5c8d2;
-
 }
 
 
-body.dark nav a:hover,
-body.dark nav a.active {
+body.dark .header nav a:hover,
+body.dark .header nav a.active {
 
     color:
         #8099ff;
-
 }
 
 
-body.dark .brand-text span {
+body.dark .header .logo span {
 
     color:
         #999eae;
-
 }
 
 
@@ -1215,7 +1156,6 @@ body.dark .hero-badge {
 
     background:
         rgba(23, 25, 32, 0.85);
-
 }
 
 
@@ -1223,7 +1163,6 @@ body.dark .category.competition {
 
     background:
         #202b4d;
-
 }
 
 
@@ -1231,7 +1170,6 @@ body.dark .category.scholarship {
 
     background:
         #29234a;
-
 }
 
 
@@ -1239,7 +1177,6 @@ body.dark .category.research {
 
     background:
         #1d3832;
-
 }
 
 
@@ -1247,7 +1184,6 @@ body.dark .category.internship {
 
     background:
         #443025;
-
 }
 
 
@@ -1255,7 +1191,6 @@ body.dark .bookmark {
 
     color:
         #777d8d;
-
 }
 
 
@@ -1263,24 +1198,35 @@ body.dark .bookmark.saved {
 
     color:
         #ff4f69;
+}
+
+
+/* =====================================================
+   DESKTOP
+===================================================== */
+
+@media (min-width: 701px) {
+
+    .filter-button {
+        display: none;
+    }
 
 }
 
 
 /* =====================================================
-   RESPONSIVE
+   TABLET
 ===================================================== */
 
 @media (max-width: 1050px) {
 
-    nav {
+    .header nav {
 
         gap:
-            30px;
+            35px;
 
         padding-left:
-            30px;
-
+            40px;
     }
 
 }
@@ -1288,22 +1234,20 @@ body.dark .bookmark.saved {
 
 @media (max-width: 950px) {
 
-    .navbar {
+    .header .container {
 
         padding:
             0 4%;
-
     }
 
 
-    nav {
+    .header nav {
 
         gap:
             22px;
 
         padding-left:
             20px;
-
     }
 
 
@@ -1311,67 +1255,65 @@ body.dark .bookmark.saved {
 
         grid-template-columns:
             repeat(2, 1fr);
-
     }
 
 }
 
 
+/* =====================================================
+   MOBILE
+===================================================== */
+
 @media (max-width: 700px) {
 
-    .navbar {
+    .header {
 
         height:
             auto;
 
         min-height:
             90px;
-
-        padding:
-            18px 5%;
-
     }
 
 
-    .navbar-inner {
+    .header .container {
+
+        padding:
+            18px 5%;
 
         flex-wrap:
             wrap;
 
         gap:
             15px;
-
     }
 
 
-    .brand-text span {
+    .header .logo span {
 
         display:
             none;
-
     }
 
 
-    .logo {
+    .header .logo-box {
 
         width:
             48px;
 
         height:
             48px;
-
     }
 
 
-    .brand-text h1 {
+    .header .logo h2 {
 
         font-size:
             25px;
-
     }
 
 
-    nav {
+    .header nav {
 
         order:
             3;
@@ -1390,37 +1332,33 @@ body.dark .bookmark.saved {
 
         gap:
             25px;
-
     }
 
 
-    nav a {
+    .header nav a {
 
         padding:
             10px 0;
 
         font-size:
             13px;
-
     }
 
 
-    nav a.active::after {
+    .header nav a.active::after {
 
         bottom:
             2px;
-
     }
 
 
-    .theme-toggle {
+    .header #themeToggle {
 
         width:
             48px;
 
         height:
             48px;
-
     }
 
 
@@ -1428,7 +1366,6 @@ body.dark .bookmark.saved {
 
         padding:
             65px 0 45px;
-
     }
 
 
@@ -1436,7 +1373,6 @@ body.dark .bookmark.saved {
 
         letter-spacing:
             -2px;
-
     }
 
 
@@ -1444,7 +1380,6 @@ body.dark .bookmark.saved {
 
         font-size:
             14px;
-
     }
 
 
@@ -1452,7 +1387,6 @@ body.dark .bookmark.saved {
 
         flex-direction:
             column;
-
     }
 
 
@@ -1460,18 +1394,26 @@ body.dark .bookmark.saved {
 
         justify-content:
             center;
-
     }
 
 
     .filters {
+
+        display:
+            none;
 
         overflow-x:
             auto;
 
         padding-bottom:
             5px;
+    }
 
+
+    .filters.show {
+
+        display:
+            flex;
     }
 
 
@@ -1479,7 +1421,6 @@ body.dark .bookmark.saved {
 
         white-space:
             nowrap;
-
     }
 
 
@@ -1487,19 +1428,6 @@ body.dark .bookmark.saved {
 
         grid-template-columns:
             1fr;
-
-    }
-
-}
-
-
-@media (min-width: 701px) {
-
-    .filter-button {
-
-        display:
-            none;
-
     }
 
 }
