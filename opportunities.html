@@ -1,133 +1,261 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Opportunities | ELN</title>
 
-    <link rel="stylesheet" href="css.css">
+    <title>Opportunities | ELN</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-     <link rel="stylesheet" href="css/opportunities.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="css.css">
+    <link rel="stylesheet" href="css/opportunities.css">
+
 </head>
+
 
 <body>
 
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
 <header class="navbar">
 
-    <a href="index.html" class="brand">
+    <div class="navbar-inner">
 
-        <div class="logo">
-            ELN
-        </div>
+        <!-- LOGO -->
 
-        <div class="brand-text">
-            <h1>ELN</h1>
-            <span>Economic Leaders Network</span>
-        </div>
+        <a href="index.html" class="brand">
 
-    </a>
+            <div class="logo">
+                ELN
+            </div>
 
-    <nav>
+            <div class="brand-text">
 
-        <a href="index.html">Home</a>
+                <h1>ELN</h1>
 
-        <a class="active" href="opportunities.html">
-            Opportunities
+                <span>
+                    Economic Leaders Network
+                </span>
+
+            </div>
+
         </a>
 
-        <a href="resources.html">
-            Resources
-        </a>
 
-        <a href="about.html">
-            About
-        </a>
+        <!-- NAVIGATION -->
 
-    </nav>
+        <nav>
 
-    <button class="theme-toggle" id="themeToggle">
-        ☾
-    </button>
+            <a href="index.html">
+                Home
+            </a>
+
+            <a
+                href="opportunities.html"
+                class="active"
+            >
+                Opportunities
+            </a>
+
+            <a href="resources.html">
+                Resources
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+        </nav>
+
+
+        <!-- THEME -->
+
+        <button
+            class="theme-toggle"
+            id="themeToggle"
+            aria-label="Toggle dark mode"
+        >
+
+            <span id="themeIcon">
+                ☾
+            </span>
+
+        </button>
+
+    </div>
 
 </header>
+
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
 <main>
 
-    <!-- PAGE HERO -->
+
+    <!-- =================================================
+         HERO
+    ================================================== -->
+
     <section class="page-hero">
 
         <div class="hero-badge">
+
             <span>🌎</span>
+
             Opportunities for students
+
         </div>
 
+
         <h2>
+
             Find Your Next
-            <span>Opportunity.</span>
+
+            <span>
+                Opportunity.
+            </span>
+
         </h2>
 
+
         <p>
+
             Discover competitions, scholarships, research programs,
-            internships and other opportunities in economics, finance and business.
+            internships and other opportunities in economics, finance
+            and business.
+
         </p>
 
     </section>
 
 
-    <!-- SEARCH + FILTERS -->
+
+    <!-- =================================================
+         OPPORTUNITIES
+    ================================================== -->
+
     <section class="opportunity-section">
+
+
+        <!-- SEARCH -->
 
         <div class="search-container">
 
             <div class="search-box">
-                <span class="search-icon">⌕</span>
+
+                <span class="search-icon">
+                    ⌕
+                </span>
+
                 <input
                     type="text"
                     id="searchInput"
                     placeholder="Search opportunities..."
+                    autocomplete="off"
                 >
+
             </div>
 
-            <button class="filter-button" id="filterButton">
-                <span>☷</span>
+
+            <button
+                class="filter-button"
+                id="filterButton"
+                type="button"
+            >
+
+                <span>
+                    ☷
+                </span>
+
                 Filters
+
             </button>
 
         </div>
 
 
-        <div class="filters" id="filters">
 
-            <button class="filter active" data-category="all">
+        <!-- FILTERS -->
+
+        <div
+            class="filters"
+            id="filters"
+        >
+
+            <button
+                class="filter active"
+                data-category="all"
+                type="button"
+            >
                 All
             </button>
 
-            <button class="filter" data-category="competition">
+
+            <button
+                class="filter"
+                data-category="competition"
+                type="button"
+            >
                 Competitions
             </button>
 
-            <button class="filter" data-category="scholarship">
+
+            <button
+                class="filter"
+                data-category="scholarship"
+                type="button"
+            >
                 Scholarships
             </button>
 
-            <button class="filter" data-category="research">
+
+            <button
+                class="filter"
+                data-category="research"
+                type="button"
+            >
                 Research
             </button>
 
-            <button class="filter" data-category="internship">
+
+            <button
+                class="filter"
+                data-category="internship"
+                type="button"
+            >
                 Internships
             </button>
 
         </div>
 
 
-        <!-- OPPORTUNITY GRID -->
-        <div class="opportunity-grid" id="opportunityGrid">
+
+        <!-- =================================================
+             OPPORTUNITY CARDS
+        ================================================== -->
+
+        <div
+            class="opportunity-grid"
+            id="opportunityGrid"
+        >
 
 
             <!-- CARD 1 -->
+
             <article
                 class="opportunity-card"
                 data-category="competition"
@@ -135,42 +263,69 @@
             >
 
                 <div class="card-top">
+
                     <span class="category competition">
                         Competition
                     </span>
 
-                    <button class="bookmark" aria-label="Save opportunity">
+
+                    <button
+                        class="bookmark"
+                        type="button"
+                        aria-label="Save opportunity"
+                    >
                         ♡
                     </button>
+
                 </div>
 
-                <h3>International Economics Competition</h3>
+
+                <h3>
+                    International Economics Competition
+                </h3>
+
 
                 <p>
                     Test your knowledge of economics and compete
                     with talented students from around the world.
                 </p>
 
+
                 <div class="card-info">
-                    <span>🌎 International</span>
-                    <span>🎓 High School</span>
+
+                    <span>
+                        🌎 International
+                    </span>
+
+                    <span>
+                        🎓 High School
+                    </span>
+
                 </div>
 
+
                 <div class="card-bottom">
+
                     <div>
-                        <small>Deadline</small>
-                        <strong>15 October 2026</strong>
+
+                        <small>
+                            Deadline
+                        </small>
+
+                        <strong>
+                            15 October 2026
+                        </strong>
+
                     </div>
 
-                    <a href="#" class="view-link">
-                        View →
-                    </a>
                 </div>
 
             </article>
 
 
+
             <!-- CARD 2 -->
+
             <article
                 class="opportunity-card"
                 data-category="scholarship"
@@ -178,42 +333,69 @@
             >
 
                 <div class="card-top">
+
                     <span class="category scholarship">
                         Scholarship
                     </span>
 
-                    <button class="bookmark" aria-label="Save opportunity">
+
+                    <button
+                        class="bookmark"
+                        type="button"
+                        aria-label="Save opportunity"
+                    >
                         ♡
                     </button>
+
                 </div>
 
-                <h3>Global Future Scholarship</h3>
+
+                <h3>
+                    Global Future Scholarship
+                </h3>
+
 
                 <p>
                     Financial support for ambitious students interested
                     in economics, business and global development.
                 </p>
 
+
                 <div class="card-info">
-                    <span>🌎 Global</span>
-                    <span>🎓 Students</span>
+
+                    <span>
+                        🌎 Global
+                    </span>
+
+                    <span>
+                        🎓 Students
+                    </span>
+
                 </div>
 
+
                 <div class="card-bottom">
+
                     <div>
-                        <small>Deadline</small>
-                        <strong>1 November 2026</strong>
+
+                        <small>
+                            Deadline
+                        </small>
+
+                        <strong>
+                            1 November 2026
+                        </strong>
+
                     </div>
 
-                    <a href="#" class="view-link">
-                        View →
-                    </a>
                 </div>
 
             </article>
 
 
+
             <!-- CARD 3 -->
+
             <article
                 class="opportunity-card"
                 data-category="research"
@@ -221,42 +403,69 @@
             >
 
                 <div class="card-top">
+
                     <span class="category research">
                         Research
                     </span>
 
-                    <button class="bookmark" aria-label="Save opportunity">
+
+                    <button
+                        class="bookmark"
+                        type="button"
+                        aria-label="Save opportunity"
+                    >
                         ♡
                     </button>
+
                 </div>
 
-                <h3>Young Economists Research Program</h3>
+
+                <h3>
+                    Young Economists Research Program
+                </h3>
+
 
                 <p>
                     Join an international research project and work
                     alongside university researchers and economists.
                 </p>
 
+
                 <div class="card-info">
-                    <span>🇪🇺 Europe</span>
-                    <span>🔬 Research</span>
+
+                    <span>
+                        🇪🇺 Europe
+                    </span>
+
+                    <span>
+                        🔬 Research
+                    </span>
+
                 </div>
 
+
                 <div class="card-bottom">
+
                     <div>
-                        <small>Deadline</small>
-                        <strong>20 November 2026</strong>
+
+                        <small>
+                            Deadline
+                        </small>
+
+                        <strong>
+                            20 November 2026
+                        </strong>
+
                     </div>
 
-                    <a href="#" class="view-link">
-                        View →
-                    </a>
                 </div>
 
             </article>
 
 
+
             <!-- CARD 4 -->
+
             <article
                 class="opportunity-card"
                 data-category="internship"
@@ -264,42 +473,69 @@
             >
 
                 <div class="card-top">
+
                     <span class="category internship">
                         Internship
                     </span>
 
-                    <button class="bookmark" aria-label="Save opportunity">
+
+                    <button
+                        class="bookmark"
+                        type="button"
+                        aria-label="Save opportunity"
+                    >
                         ♡
                     </button>
+
                 </div>
 
-                <h3>Finance Summer Internship</h3>
+
+                <h3>
+                    Finance Summer Internship
+                </h3>
+
 
                 <p>
                     Gain practical experience in financial analysis,
                     investment research and business strategy.
                 </p>
 
+
                 <div class="card-info">
-                    <span>🇬🇧 United Kingdom</span>
-                    <span>💼 Internship</span>
+
+                    <span>
+                        🇬🇧 United Kingdom
+                    </span>
+
+                    <span>
+                        💼 Internship
+                    </span>
+
                 </div>
 
+
                 <div class="card-bottom">
+
                     <div>
-                        <small>Deadline</small>
-                        <strong>10 December 2026</strong>
+
+                        <small>
+                            Deadline
+                        </small>
+
+                        <strong>
+                            10 December 2026
+                        </strong>
+
                     </div>
 
-                    <a href="#" class="view-link">
-                        View →
-                    </a>
                 </div>
 
             </article>
 
 
+
             <!-- CARD 5 -->
+
             <article
                 class="opportunity-card"
                 data-category="competition"
@@ -307,42 +543,69 @@
             >
 
                 <div class="card-top">
+
                     <span class="category competition">
                         Competition
                     </span>
 
-                    <button class="bookmark" aria-label="Save opportunity">
+
+                    <button
+                        class="bookmark"
+                        type="button"
+                        aria-label="Save opportunity"
+                    >
                         ♡
                     </button>
+
                 </div>
 
-                <h3>Global Business Challenge</h3>
+
+                <h3>
+                    Global Business Challenge
+                </h3>
+
 
                 <p>
                     Develop innovative solutions to real-world business
                     problems and present your ideas to industry experts.
                 </p>
 
+
                 <div class="card-info">
-                    <span>🌎 International</span>
-                    <span>💡 Business</span>
+
+                    <span>
+                        🌎 International
+                    </span>
+
+                    <span>
+                        💡 Business
+                    </span>
+
                 </div>
 
+
                 <div class="card-bottom">
+
                     <div>
-                        <small>Deadline</small>
-                        <strong>5 January 2027</strong>
+
+                        <small>
+                            Deadline
+                        </small>
+
+                        <strong>
+                            5 January 2027
+                        </strong>
+
                     </div>
 
-                    <a href="#" class="view-link">
-                        View →
-                    </a>
                 </div>
 
             </article>
 
 
+
             <!-- CARD 6 -->
+
             <article
                 class="opportunity-card"
                 data-category="scholarship"
@@ -350,60 +613,114 @@
             >
 
                 <div class="card-top">
+
                     <span class="category scholarship">
                         Scholarship
                     </span>
 
-                    <button class="bookmark" aria-label="Save opportunity">
+
+                    <button
+                        class="bookmark"
+                        type="button"
+                        aria-label="Save opportunity"
+                    >
                         ♡
                     </button>
+
                 </div>
 
-                <h3>Future Leaders Scholarship</h3>
+
+                <h3>
+                    Future Leaders Scholarship
+                </h3>
+
 
                 <p>
                     A scholarship supporting students who demonstrate
                     leadership, academic excellence and community impact.
                 </p>
 
+
                 <div class="card-info">
-                    <span>🌎 International</span>
-                    <span>🎓 Students</span>
+
+                    <span>
+                        🌎 International
+                    </span>
+
+                    <span>
+                        🎓 Students
+                    </span>
+
                 </div>
 
+
                 <div class="card-bottom">
+
                     <div>
-                        <small>Deadline</small>
-                        <strong>15 January 2027</strong>
+
+                        <small>
+                            Deadline
+                        </small>
+
+                        <strong>
+                            15 January 2027
+                        </strong>
+
                     </div>
 
-                    <a href="#" class="view-link">
-                        View →
-                    </a>
                 </div>
 
             </article>
 
+
         </div>
 
 
-        <div class="no-results" id="noResults">
-            <div>🔎</div>
-            <h3>No opportunities found</h3>
-            <p>Try another search or category.</p>
+
+        <!-- NO RESULTS -->
+
+        <div
+            class="no-results"
+            id="noResults"
+        >
+
+            <div>
+                🔎
+            </div>
+
+            <h3>
+                No opportunities found
+            </h3>
+
+            <p>
+                Try another search or category.
+            </p>
+
         </div>
+
 
     </section>
 
 </main>
 
 
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
 <footer>
-    <p>© 2026 Economic Leaders Network</p>
+
+    <p>
+        © 2026 Economic Leaders Network
+    </p>
+
 </footer>
+
 
 
 <script src="js.js"></script>
 
 </body>
+
 </html>
