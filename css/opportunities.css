@@ -1,5 +1,5 @@
 /* =====================================================
-   ELN — OPPORTUNITIES PAGE
+   OPPORTUNITIES PAGE
 ===================================================== */
 
 
@@ -13,7 +13,9 @@
     padding: 0;
 }
 
+
 :root {
+
     --blue: #5377ff;
     --blue-dark: #4567ed;
 
@@ -28,6 +30,7 @@
 
     --shadow:
         0 15px 45px rgba(50, 70, 140, 0.08);
+
 }
 
 
@@ -37,83 +40,85 @@ html {
 
 
 body {
-    font-family: "Inter", sans-serif;
 
-    background:
-        radial-gradient(
-            circle at 50% 0%,
-            rgba(130, 100, 255, 0.12),
-            transparent 38%
-        ),
-        linear-gradient(
-            180deg,
-            #faf9ff 0%,
-            #ffffff 45%,
-            #ffffff 100%
-        );
+    font-family: "Inter", sans-serif;
 
     color: var(--text);
 
     min-height: 100vh;
 
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(116, 91, 255, 0.10),
+            transparent 38%
+        ),
+        linear-gradient(
+            180deg,
+            #faf9ff 0%,
+            #ffffff 42%,
+            #ffffff 100%
+        );
+
     transition:
         background 0.3s ease,
         color 0.3s ease;
+
 }
 
 
 /* =====================================================
-   HEADER
-   IMPORTANT:
-   Uses your ORIGINAL header structure
+   NAVBAR
 ===================================================== */
 
-.header {
+.navbar {
 
     width: 100%;
 
     height: 112px;
 
-    background:
-        rgba(255, 255, 255, 0.92);
+    padding: 0 5.2%;
 
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-
-    border-bottom:
-        1px solid rgba(230, 232, 240, 0.7);
+    display: flex;
+    align-items: center;
 
     position: sticky;
 
     top: 0;
 
     z-index: 1000;
+
+    background:
+        rgba(255, 255, 255, 0.92);
+
+    backdrop-filter: blur(15px);
+
+    -webkit-backdrop-filter: blur(15px);
+
+    border-bottom:
+        1px solid rgba(230, 232, 240, 0.7);
+
 }
 
 
-/* HEADER CONTAINER */
-
-.header .container {
+.navbar-inner {
 
     width: 100%;
-
-    height: 100%;
-
-    padding: 0 5.2%;
 
     display: flex;
 
     align-items: center;
 
     justify-content: space-between;
+
 }
 
 
 /* =====================================================
-   LOGO
+   BRAND
 ===================================================== */
 
-.header .logo {
+.brand {
 
     display: flex;
 
@@ -126,19 +131,18 @@ body {
     color: var(--text);
 
     flex-shrink: 0;
+
 }
 
 
-.header .logo-box {
+.logo {
 
     width: 58px;
-
     height: 58px;
 
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     background:
@@ -160,11 +164,10 @@ body {
         0 10px 25px
         rgba(83, 119, 255, 0.2);
 
-    flex-shrink: 0;
 }
 
 
-.header .logo h2 {
+.brand-text h1 {
 
     font-size: 30px;
 
@@ -173,10 +176,11 @@ body {
     font-weight: 800;
 
     letter-spacing: -1px;
+
 }
 
 
-.header .logo span {
+.brand-text span {
 
     display: block;
 
@@ -185,6 +189,7 @@ body {
     font-size: 14px;
 
     color: #818493;
+
 }
 
 
@@ -192,7 +197,7 @@ body {
    NAVIGATION
 ===================================================== */
 
-.header nav {
+nav {
 
     display: flex;
 
@@ -205,10 +210,11 @@ body {
     margin-right: auto;
 
     padding-left: 80px;
+
 }
 
 
-.header nav a {
+nav a {
 
     position: relative;
 
@@ -226,22 +232,25 @@ body {
 
     transition:
         color 0.2s ease;
+
 }
 
 
-.header nav a:hover {
+nav a:hover {
 
     color: var(--blue);
+
 }
 
 
-.header nav a.active {
+nav a.active {
 
     color: var(--blue);
+
 }
 
 
-.header nav a.active::after {
+nav a.active::after {
 
     content: "";
 
@@ -260,6 +269,7 @@ body {
     background: var(--blue);
 
     border-radius: 50%;
+
 }
 
 
@@ -267,7 +277,7 @@ body {
    THEME BUTTON
 ===================================================== */
 
-.header #themeToggle {
+.theme-toggle {
 
     width: 58px;
 
@@ -300,20 +310,25 @@ body {
     transition:
         transform 0.25s ease,
         background 0.25s ease;
+
 }
 
 
-.header #themeToggle:hover {
+.theme-toggle:hover {
 
     transform:
         rotate(15deg)
         scale(1.05);
+
 }
 
 
-.header #themeToggle span {
+.theme-toggle span {
+
+    display: block;
 
     line-height: 1;
+
 }
 
 
@@ -334,6 +349,7 @@ body {
 
     text-align:
         center;
+
 }
 
 
@@ -352,7 +368,7 @@ body {
         12px 20px;
 
     background:
-        rgba(255, 255, 255, 0.85);
+        rgba(255, 255, 255, 0.8);
 
     border:
         1px solid var(--border);
@@ -372,6 +388,7 @@ body {
     box-shadow:
         0 8px 25px
         rgba(40, 50, 100, 0.05);
+
 }
 
 
@@ -391,6 +408,7 @@ body {
 
     font-weight:
         800;
+
 }
 
 
@@ -401,6 +419,7 @@ body {
 
     color:
         var(--blue);
+
 }
 
 
@@ -420,11 +439,12 @@ body {
 
     line-height:
         1.8;
+
 }
 
 
 /* =====================================================
-   OPPORTUNITY SECTION
+   OPPORTUNITIES SECTION
 ===================================================== */
 
 .opportunity-section {
@@ -437,6 +457,7 @@ body {
 
     padding-bottom:
         100px;
+
 }
 
 
@@ -451,6 +472,7 @@ body {
 
     gap:
         14px;
+
 }
 
 
@@ -487,6 +509,7 @@ body {
     transition:
         border-color 0.2s ease,
         box-shadow 0.2s ease;
+
 }
 
 
@@ -498,6 +521,7 @@ body {
     box-shadow:
         0 8px 30px
         rgba(83, 119, 255, 0.10);
+
 }
 
 
@@ -511,6 +535,7 @@ body {
 
     margin-right:
         12px;
+
 }
 
 
@@ -536,6 +561,7 @@ body {
 
     font-size:
         15px;
+
 }
 
 
@@ -543,6 +569,7 @@ body {
 
     color:
         #9a9eab;
+
 }
 
 
@@ -593,6 +620,7 @@ body {
 
     transition:
         0.2s ease;
+
 }
 
 
@@ -603,6 +631,7 @@ body {
 
     color:
         var(--blue);
+
 }
 
 
@@ -620,6 +649,7 @@ body {
 
     margin:
         22px 0 32px;
+
 }
 
 
@@ -654,6 +684,7 @@ body {
 
     transition:
         0.2s ease;
+
 }
 
 
@@ -664,6 +695,7 @@ body {
 
     color:
         var(--blue);
+
 }
 
 
@@ -681,6 +713,7 @@ body {
     box-shadow:
         0 7px 18px
         rgba(83, 119, 255, 0.2);
+
 }
 
 
@@ -698,11 +731,12 @@ body {
 
     gap:
         20px;
+
 }
 
 
 /* =====================================================
-   OPPORTUNITY CARD
+   CARDS
 ===================================================== */
 
 .opportunity-card {
@@ -735,6 +769,7 @@ body {
         transform 0.25s ease,
         box-shadow 0.25s ease,
         border-color 0.25s ease;
+
 }
 
 
@@ -749,6 +784,7 @@ body {
 
     border-color:
         rgba(83, 119, 255, 0.3);
+
 }
 
 
@@ -766,12 +802,9 @@ body {
 
     align-items:
         center;
+
 }
 
-
-/* =====================================================
-   CATEGORY
-===================================================== */
 
 .category {
 
@@ -792,6 +825,7 @@ body {
 
     letter-spacing:
         0.4px;
+
 }
 
 
@@ -802,6 +836,7 @@ body {
 
     color:
         #5273ee;
+
 }
 
 
@@ -812,6 +847,7 @@ body {
 
     color:
         #7660df;
+
 }
 
 
@@ -822,6 +858,7 @@ body {
 
     color:
         #32947c;
+
 }
 
 
@@ -832,11 +869,12 @@ body {
 
     color:
         #d8793e;
+
 }
 
 
 /* =====================================================
-   BOOKMARK / HEART
+   HEART / BOOKMARK
 ===================================================== */
 
 .bookmark {
@@ -865,6 +903,7 @@ body {
     transition:
         color 0.2s ease,
         transform 0.2s ease;
+
 }
 
 
@@ -875,6 +914,7 @@ body {
 
     transform:
         scale(1.15);
+
 }
 
 
@@ -882,6 +922,7 @@ body {
 
     color:
         #ff3f5f;
+
 }
 
 
@@ -889,6 +930,7 @@ body {
 
     color:
         #ff294d;
+
 }
 
 
@@ -909,6 +951,7 @@ body {
 
     letter-spacing:
         -0.5px;
+
 }
 
 
@@ -925,6 +968,7 @@ body {
 
     line-height:
         1.7;
+
 }
 
 
@@ -945,6 +989,7 @@ body {
 
     margin-top:
         18px;
+
 }
 
 
@@ -964,6 +1009,7 @@ body {
 
     font-size:
         11px;
+
 }
 
 
@@ -980,7 +1026,7 @@ body {
         space-between;
 
     align-items:
-        flex-end;
+        end;
 
     margin-top:
         auto;
@@ -990,6 +1036,7 @@ body {
 
     border-top:
         1px solid var(--border);
+
 }
 
 
@@ -1006,6 +1053,7 @@ body {
 
     margin-bottom:
         4px;
+
 }
 
 
@@ -1016,6 +1064,7 @@ body {
 
     font-weight:
         600;
+
 }
 
 
@@ -1033,6 +1082,7 @@ body {
 
     padding:
         70px 20px;
+
 }
 
 
@@ -1040,6 +1090,7 @@ body {
 
     font-size:
         40px;
+
 }
 
 
@@ -1050,6 +1101,7 @@ body {
 
     font-size:
         22px;
+
 }
 
 
@@ -1060,6 +1112,7 @@ body {
 
     color:
         var(--muted);
+
 }
 
 
@@ -1083,6 +1136,7 @@ footer {
 
     font-size:
         12px;
+
 }
 
 
@@ -1113,42 +1167,47 @@ body.dark {
     background:
         radial-gradient(
             circle at 50% 0%,
-            rgba(116, 91, 255, 0.13),
+            rgba(116, 91, 255, 0.12),
             transparent 38%
         ),
         #101116;
+
 }
 
 
-body.dark .header {
+body.dark .navbar {
 
     background:
         rgba(16, 17, 22, 0.92);
 
     border-bottom-color:
         rgba(70, 74, 90, 0.5);
+
 }
 
 
-body.dark .header nav a {
+body.dark nav a {
 
     color:
         #c5c8d2;
+
 }
 
 
-body.dark .header nav a:hover,
-body.dark .header nav a.active {
+body.dark nav a:hover,
+body.dark nav a.active {
 
     color:
         #8099ff;
+
 }
 
 
-body.dark .header .logo span {
+body.dark .brand-text span {
 
     color:
         #999eae;
+
 }
 
 
@@ -1156,6 +1215,7 @@ body.dark .hero-badge {
 
     background:
         rgba(23, 25, 32, 0.85);
+
 }
 
 
@@ -1163,6 +1223,7 @@ body.dark .category.competition {
 
     background:
         #202b4d;
+
 }
 
 
@@ -1170,6 +1231,7 @@ body.dark .category.scholarship {
 
     background:
         #29234a;
+
 }
 
 
@@ -1177,6 +1239,7 @@ body.dark .category.research {
 
     background:
         #1d3832;
+
 }
 
 
@@ -1184,6 +1247,7 @@ body.dark .category.internship {
 
     background:
         #443025;
+
 }
 
 
@@ -1191,6 +1255,7 @@ body.dark .bookmark {
 
     color:
         #777d8d;
+
 }
 
 
@@ -1198,35 +1263,24 @@ body.dark .bookmark.saved {
 
     color:
         #ff4f69;
-}
-
-
-/* =====================================================
-   DESKTOP
-===================================================== */
-
-@media (min-width: 701px) {
-
-    .filter-button {
-        display: none;
-    }
 
 }
 
 
 /* =====================================================
-   TABLET
+   RESPONSIVE
 ===================================================== */
 
 @media (max-width: 1050px) {
 
-    .header nav {
+    nav {
 
         gap:
-            35px;
+            30px;
 
         padding-left:
-            40px;
+            30px;
+
     }
 
 }
@@ -1234,20 +1288,22 @@ body.dark .bookmark.saved {
 
 @media (max-width: 950px) {
 
-    .header .container {
+    .navbar {
 
         padding:
             0 4%;
+
     }
 
 
-    .header nav {
+    nav {
 
         gap:
             22px;
 
         padding-left:
             20px;
+
     }
 
 
@@ -1255,65 +1311,67 @@ body.dark .bookmark.saved {
 
         grid-template-columns:
             repeat(2, 1fr);
+
     }
 
 }
 
 
-/* =====================================================
-   MOBILE
-===================================================== */
-
 @media (max-width: 700px) {
 
-    .header {
+    .navbar {
 
         height:
             auto;
 
         min-height:
             90px;
-    }
-
-
-    .header .container {
 
         padding:
             18px 5%;
+
+    }
+
+
+    .navbar-inner {
 
         flex-wrap:
             wrap;
 
         gap:
             15px;
+
     }
 
 
-    .header .logo span {
+    .brand-text span {
 
         display:
             none;
+
     }
 
 
-    .header .logo-box {
+    .logo {
 
         width:
             48px;
 
         height:
             48px;
+
     }
 
 
-    .header .logo h2 {
+    .brand-text h1 {
 
         font-size:
             25px;
+
     }
 
 
-    .header nav {
+    nav {
 
         order:
             3;
@@ -1332,33 +1390,37 @@ body.dark .bookmark.saved {
 
         gap:
             25px;
+
     }
 
 
-    .header nav a {
+    nav a {
 
         padding:
             10px 0;
 
         font-size:
             13px;
+
     }
 
 
-    .header nav a.active::after {
+    nav a.active::after {
 
         bottom:
             2px;
+
     }
 
 
-    .header #themeToggle {
+    .theme-toggle {
 
         width:
             48px;
 
         height:
             48px;
+
     }
 
 
@@ -1366,6 +1428,7 @@ body.dark .bookmark.saved {
 
         padding:
             65px 0 45px;
+
     }
 
 
@@ -1373,6 +1436,7 @@ body.dark .bookmark.saved {
 
         letter-spacing:
             -2px;
+
     }
 
 
@@ -1380,6 +1444,7 @@ body.dark .bookmark.saved {
 
         font-size:
             14px;
+
     }
 
 
@@ -1387,6 +1452,7 @@ body.dark .bookmark.saved {
 
         flex-direction:
             column;
+
     }
 
 
@@ -1394,26 +1460,18 @@ body.dark .bookmark.saved {
 
         justify-content:
             center;
+
     }
 
 
     .filters {
-
-        display:
-            none;
 
         overflow-x:
             auto;
 
         padding-bottom:
             5px;
-    }
 
-
-    .filters.show {
-
-        display:
-            flex;
     }
 
 
@@ -1421,6 +1479,7 @@ body.dark .bookmark.saved {
 
         white-space:
             nowrap;
+
     }
 
 
@@ -1428,6 +1487,19 @@ body.dark .bookmark.saved {
 
         grid-template-columns:
             1fr;
+
+    }
+
+}
+
+
+@media (min-width: 701px) {
+
+    .filter-button {
+
+        display:
+            none;
+
     }
 
 }
