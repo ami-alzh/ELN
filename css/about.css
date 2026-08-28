@@ -538,59 +538,6 @@
 }
 
 
-/* ==========================================
-   DARK MODE
-========================================== */
-
-body.dark .about-card {
-
-    background: #151827;
-
-    border-color: #252a3d;
-
-}
-
-body.dark .featured-card {
-
-    background: linear-gradient(
-        135deg,
-        #171d35,
-        #211c38
-    );
-
-}
-
-body.dark .find-card {
-
-    background: #151827;
-
-    border-color: #252a3d;
-
-}
-
-body.dark .vision-box {
-
-    background: #151827;
-
-    border-color: #252a3d;
-
-}
-
-body.dark .about-hero p,
-body.dark .section-intro p,
-body.dark .about-card p,
-body.dark .find-card p,
-body.dark .vision-box p {
-
-    color: #a7adbd;
-
-}
-
-body.dark .about-footer {
-
-    border-color: #252a3d;
-
-}
 
 
 /* ==========================================
