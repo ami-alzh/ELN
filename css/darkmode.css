@@ -104,7 +104,7 @@ body.dark nav a.active {
    THEME BUTTON
 ========================== */
 
-body.dark #themeToggle {
+body.dark .theme-toggle {
 
     background: #171920;
 
@@ -312,7 +312,7 @@ body.dark .no-results p {
 body,
 .header,
 nav a,
-#themeToggle,
+.theme-toggle,
 .card,
 .about-card,
 .find-card,
