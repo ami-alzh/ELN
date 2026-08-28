@@ -273,63 +273,6 @@ nav a.active::after {
 }
 
 
-/* =====================================================
-   THEME BUTTON
-===================================================== */
-
-.theme-toggle {
-
-    width: 58px;
-
-    height: 58px;
-
-    border: none;
-
-    border-radius: 50%;
-
-    background: var(--surface);
-
-    color: var(--text);
-
-    box-shadow:
-        0 8px 25px
-        rgba(30, 30, 50, 0.08);
-
-    font-size: 25px;
-
-    cursor: pointer;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    flex-shrink: 0;
-
-    transition:
-        transform 0.25s ease,
-        background 0.25s ease;
-
-}
-
-
-.theme-toggle:hover {
-
-    transform:
-        rotate(15deg)
-        scale(1.05);
-
-}
-
-
-.theme-toggle span {
-
-    display: block;
-
-    line-height: 1;
-
-}
 
 
 /* =====================================================
