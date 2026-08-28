@@ -1145,6 +1145,35 @@ footer {
 ===================================================== */
 
 
+body.dark {
+
+    --text:
+        #f4f5f8;
+
+    --muted:
+        #a5a9b8;
+
+    --background:
+        #101116;
+
+    --surface:
+        #171920;
+
+    --surface-soft:
+        #20232d;
+
+    --border:
+        #292d38;
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(116, 91, 255, 0.12),
+            transparent 38%
+        ),
+        #101116;
+
+}
 
 body.dark .navbar {
 
