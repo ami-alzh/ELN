@@ -1,28 +1,67 @@
+/* =========================================
+   ELN — CENTRALIZED THEME SYSTEM
+========================================= */
+
 const themeToggle = document.getElementById("themeToggle");
 const themeIcon = document.getElementById("themeIcon");
 
 const savedTheme = localStorage.getItem("eln-theme");
 
-if (savedTheme === "dark") {
-    document.body.classList.add("dark");
-    themeIcon.textContent = "☀";
-} else {
-    themeIcon.textContent = "☾";
-}
+function updateThemeIcon() {
 
-themeToggle.addEventListener("click", () => {
-
-    document.body.classList.toggle("dark");
+    if (!themeToggle) return;
 
     const isDark =
         document.body.classList.contains("dark");
 
-    if (isDark) {
-        themeIcon.textContent = "☀";
-        localStorage.setItem("eln-theme", "dark");
+    if (themeIcon) {
+
+        themeIcon.textContent =
+            isDark ? "☀" : "☾";
+
     } else {
-        themeIcon.textContent = "☾";
-        localStorage.setItem("eln-theme", "light");
+
+        themeToggle.textContent =
+            isDark ? "☀" : "☾";
+
     }
 
-});
+}
+
+
+/* ==========================
+   LOAD SAVED THEME
+========================== */
+
+if (savedTheme === "dark") {
+
+    document.body.classList.add("dark");
+
+}
+
+updateThemeIcon();
+
+
+/* ==========================
+   TOGGLE THEME
+========================== */
+
+if (themeToggle) {
+
+    themeToggle.addEventListener("click", () => {
+
+        document.body.classList.toggle("dark");
+
+        const isDark =
+            document.body.classList.contains("dark");
+
+        localStorage.setItem(
+            "eln-theme",
+            isDark ? "dark" : "light"
+        );
+
+        updateThemeIcon();
+
+    });
+
+}
