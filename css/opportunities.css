@@ -1,0 +1,1408 @@
+/* =====================================================
+   OPPORTUNITIES PAGE
+===================================================== */
+
+
+/* =====================================================
+   GENERAL
+===================================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+:root {
+
+    --blue: #5377ff;
+    --blue-dark: #4567ed;
+
+    --text: #17171a;
+    --muted: #737789;
+
+    --background: #ffffff;
+    --surface: #ffffff;
+    --surface-soft: #f7f8fc;
+
+    --border: #e9ebf3;
+
+    --shadow:
+        0 15px 45px rgba(50, 70, 140, 0.08);
+
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    font-family: "Inter", sans-serif;
+
+    color: var(--text);
+
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(116, 91, 255, 0.10),
+            transparent 38%
+        ),
+        linear-gradient(
+            180deg,
+            #faf9ff 0%,
+            #ffffff 42%,
+            #ffffff 100%
+        );
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
+
+}
+
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+.navbar {
+
+    width: 100%;
+
+    height: 112px;
+
+    padding: 0 5.2%;
+
+    display: flex;
+    align-items: center;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    background:
+        rgba(255, 255, 255, 0.92);
+
+    backdrop-filter: blur(15px);
+
+    -webkit-backdrop-filter: blur(15px);
+
+    border-bottom:
+        1px solid rgba(230, 232, 240, 0.7);
+
+}
+
+
+.navbar-inner {
+
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+}
+
+
+/* =====================================================
+   BRAND
+===================================================== */
+
+.brand {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    text-decoration: none;
+
+    color: var(--text);
+
+    flex-shrink: 0;
+
+}
+
+
+.logo {
+
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #5479ff,
+            #7068f5
+        );
+
+    color: white;
+
+    border-radius: 17px;
+
+    font-size: 20px;
+
+    font-weight: 800;
+
+    box-shadow:
+        0 10px 25px
+        rgba(83, 119, 255, 0.2);
+
+}
+
+
+.brand-text h1 {
+
+    font-size: 30px;
+
+    line-height: 1;
+
+    font-weight: 800;
+
+    letter-spacing: -1px;
+
+}
+
+
+.brand-text span {
+
+    display: block;
+
+    margin-top: 5px;
+
+    font-size: 14px;
+
+    color: #818493;
+
+}
+
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+nav {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 55px;
+
+    margin-left: auto;
+
+    margin-right: auto;
+
+    padding-left: 80px;
+
+}
+
+
+nav a {
+
+    position: relative;
+
+    text-decoration: none;
+
+    color: #3e3f45;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    padding: 44px 0;
+
+    white-space: nowrap;
+
+    transition:
+        color 0.2s ease;
+
+}
+
+
+nav a:hover {
+
+    color: var(--blue);
+
+}
+
+
+nav a.active {
+
+    color: var(--blue);
+
+}
+
+
+nav a.active::after {
+
+    content: "";
+
+    position: absolute;
+
+    bottom: 30px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 7px;
+
+    height: 7px;
+
+    background: var(--blue);
+
+    border-radius: 50%;
+
+}
+
+
+
+
+/* =====================================================
+   PAGE HERO
+===================================================== */
+
+.page-hero {
+
+    width:
+        min(1180px, 90%);
+
+    margin:
+        0 auto;
+
+    padding:
+        90px 0 60px;
+
+    text-align:
+        center;
+
+}
+
+
+.hero-badge {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        9px;
+
+    padding:
+        12px 20px;
+
+    background:
+        rgba(255, 255, 255, 0.8);
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        50px;
+
+    color:
+        #636879;
+
+    font-size:
+        14px;
+
+    font-weight:
+        600;
+
+    box-shadow:
+        0 8px 25px
+        rgba(40, 50, 100, 0.05);
+
+}
+
+
+.page-hero h2 {
+
+    margin-top:
+        28px;
+
+    font-size:
+        clamp(48px, 6vw, 78px);
+
+    line-height:
+        0.98;
+
+    letter-spacing:
+        -4px;
+
+    font-weight:
+        800;
+
+}
+
+
+.page-hero h2 span {
+
+    display:
+        block;
+
+    color:
+        var(--blue);
+
+}
+
+
+.page-hero p {
+
+    max-width:
+        680px;
+
+    margin:
+        28px auto 0;
+
+    color:
+        var(--muted);
+
+    font-size:
+        17px;
+
+    line-height:
+        1.8;
+
+}
+
+
+/* =====================================================
+   OPPORTUNITIES SECTION
+===================================================== */
+
+.opportunity-section {
+
+    width:
+        min(1180px, 90%);
+
+    margin:
+        0 auto;
+
+    padding-bottom:
+        100px;
+
+}
+
+
+/* =====================================================
+   SEARCH
+===================================================== */
+
+.search-container {
+
+    display:
+        flex;
+
+    gap:
+        14px;
+
+}
+
+
+.search-box {
+
+    flex:
+        1;
+
+    height:
+        60px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    padding:
+        0 22px;
+
+    background:
+        var(--surface);
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        17px;
+
+    box-shadow:
+        0 8px 30px
+        rgba(30, 50, 100, 0.04);
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+
+}
+
+
+.search-box:focus-within {
+
+    border-color:
+        rgba(83, 119, 255, 0.55);
+
+    box-shadow:
+        0 8px 30px
+        rgba(83, 119, 255, 0.10);
+
+}
+
+
+.search-icon {
+
+    font-size:
+        25px;
+
+    color:
+        #8b91a2;
+
+    margin-right:
+        12px;
+
+}
+
+
+.search-box input {
+
+    width:
+        100%;
+
+    border:
+        none;
+
+    outline:
+        none;
+
+    background:
+        transparent;
+
+    color:
+        var(--text);
+
+    font-family:
+        inherit;
+
+    font-size:
+        15px;
+
+}
+
+
+.search-box input::placeholder {
+
+    color:
+        #9a9eab;
+
+}
+
+
+/* =====================================================
+   FILTER BUTTON
+===================================================== */
+
+.filter-button {
+
+    height:
+        60px;
+
+    padding:
+        0 24px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        9px;
+
+    border:
+        1px solid var(--border);
+
+    background:
+        var(--surface);
+
+    color:
+        var(--text);
+
+    border-radius:
+        17px;
+
+    font-family:
+        inherit;
+
+    font-weight:
+        600;
+
+    font-size:
+        15px;
+
+    cursor:
+        pointer;
+
+    transition:
+        0.2s ease;
+
+}
+
+
+.filter-button:hover {
+
+    border-color:
+        var(--blue);
+
+    color:
+        var(--blue);
+
+}
+
+
+/* =====================================================
+   FILTERS
+===================================================== */
+
+.filters {
+
+    display:
+        flex;
+
+    gap:
+        10px;
+
+    margin:
+        22px 0 32px;
+
+}
+
+
+.filter {
+
+    padding:
+        10px 18px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        50px;
+
+    background:
+        var(--surface);
+
+    color:
+        var(--muted);
+
+    font-family:
+        inherit;
+
+    font-size:
+        13px;
+
+    font-weight:
+        600;
+
+    cursor:
+        pointer;
+
+    transition:
+        0.2s ease;
+
+}
+
+
+.filter:hover {
+
+    border-color:
+        var(--blue);
+
+    color:
+        var(--blue);
+
+}
+
+
+.filter.active {
+
+    background:
+        var(--blue);
+
+    border-color:
+        var(--blue);
+
+    color:
+        white;
+
+    box-shadow:
+        0 7px 18px
+        rgba(83, 119, 255, 0.2);
+
+}
+
+
+/* =====================================================
+   OPPORTUNITY GRID
+===================================================== */
+
+.opportunity-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap:
+        20px;
+
+}
+
+
+/* =====================================================
+   CARDS
+===================================================== */
+
+.opportunity-card {
+
+    padding:
+        26px;
+
+    background:
+        var(--surface);
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        22px;
+
+    min-height:
+        345px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    box-shadow:
+        var(--shadow);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+
+}
+
+
+.opportunity-card:hover {
+
+    transform:
+        translateY(-6px);
+
+    box-shadow:
+        0 22px 55px
+        rgba(50, 70, 140, 0.13);
+
+    border-color:
+        rgba(83, 119, 255, 0.3);
+
+}
+
+
+/* =====================================================
+   CARD TOP
+===================================================== */
+
+.card-top {
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        center;
+
+}
+
+
+.category {
+
+    padding:
+        7px 12px;
+
+    border-radius:
+        8px;
+
+    font-size:
+        11px;
+
+    font-weight:
+        700;
+
+    text-transform:
+        uppercase;
+
+    letter-spacing:
+        0.4px;
+
+}
+
+
+.category.competition {
+
+    background:
+        #edf1ff;
+
+    color:
+        #5273ee;
+
+}
+
+
+.category.scholarship {
+
+    background:
+        #f1edff;
+
+    color:
+        #7660df;
+
+}
+
+
+.category.research {
+
+    background:
+        #eaf8f4;
+
+    color:
+        #32947c;
+
+}
+
+
+.category.internship {
+
+    background:
+        #fff2e8;
+
+    color:
+        #d8793e;
+
+}
+
+
+/* =====================================================
+   HEART / BOOKMARK
+===================================================== */
+
+.bookmark {
+
+    border:
+        none;
+
+    background:
+        transparent;
+
+    font-size:
+        27px;
+
+    line-height:
+        1;
+
+    color:
+        #a1a5b1;
+
+    cursor:
+        pointer;
+
+    padding:
+        4px;
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+
+}
+
+
+.bookmark:hover {
+
+    color:
+        #ff4d67;
+
+    transform:
+        scale(1.15);
+
+}
+
+
+.bookmark.saved {
+
+    color:
+        #ff3f5f;
+
+}
+
+
+.bookmark.saved:hover {
+
+    color:
+        #ff294d;
+
+}
+
+
+/* =====================================================
+   CARD CONTENT
+===================================================== */
+
+.opportunity-card h3 {
+
+    margin-top:
+        22px;
+
+    font-size:
+        21px;
+
+    line-height:
+        1.3;
+
+    letter-spacing:
+        -0.5px;
+
+}
+
+
+.opportunity-card p {
+
+    margin-top:
+        12px;
+
+    color:
+        var(--muted);
+
+    font-size:
+        13px;
+
+    line-height:
+        1.7;
+
+}
+
+
+/* =====================================================
+   CARD INFO
+===================================================== */
+
+.card-info {
+
+    display:
+        flex;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        8px;
+
+    margin-top:
+        18px;
+
+}
+
+
+.card-info span {
+
+    padding:
+        7px 10px;
+
+    background:
+        var(--surface-soft);
+
+    border-radius:
+        8px;
+
+    color:
+        var(--muted);
+
+    font-size:
+        11px;
+
+}
+
+
+/* =====================================================
+   CARD BOTTOM
+===================================================== */
+
+.card-bottom {
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        end;
+
+    margin-top:
+        auto;
+
+    padding-top:
+        25px;
+
+    border-top:
+        1px solid var(--border);
+
+}
+
+
+.card-bottom small {
+
+    display:
+        block;
+
+    color:
+        #9a9eaa;
+
+    font-size:
+        10px;
+
+    margin-bottom:
+        4px;
+
+}
+
+
+.card-bottom strong {
+
+    font-size:
+        12px;
+
+    font-weight:
+        600;
+
+}
+
+
+/* =====================================================
+   NO RESULTS
+===================================================== */
+
+.no-results {
+
+    display:
+        none;
+
+    text-align:
+        center;
+
+    padding:
+        70px 20px;
+
+}
+
+
+.no-results div {
+
+    font-size:
+        40px;
+
+}
+
+
+.no-results h3 {
+
+    margin-top:
+        15px;
+
+    font-size:
+        22px;
+
+}
+
+
+.no-results p {
+
+    margin-top:
+        8px;
+
+    color:
+        var(--muted);
+
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+
+    padding:
+        35px;
+
+    text-align:
+        center;
+
+    border-top:
+        1px solid var(--border);
+
+    color:
+        var(--muted);
+
+    font-size:
+        12px;
+
+}
+
+
+/* =====================================================
+   DARK MODE
+===================================================== */
+
+
+body.dark .navbar {
+
+    background:
+        rgba(16, 17, 22, 0.92);
+
+    border-bottom-color:
+        rgba(70, 74, 90, 0.5);
+
+}
+
+
+body.dark nav a {
+
+    color:
+        #c5c8d2;
+
+}
+
+
+body.dark nav a:hover,
+body.dark nav a.active {
+
+    color:
+        #8099ff;
+
+}
+
+
+body.dark .brand-text span {
+
+    color:
+        #999eae;
+
+}
+
+
+body.dark .hero-badge {
+
+    background:
+        rgba(23, 25, 32, 0.85);
+
+}
+
+
+body.dark .category.competition {
+
+    background:
+        #202b4d;
+
+}
+
+
+body.dark .category.scholarship {
+
+    background:
+        #29234a;
+
+}
+
+
+body.dark .category.research {
+
+    background:
+        #1d3832;
+
+}
+
+
+body.dark .category.internship {
+
+    background:
+        #443025;
+
+}
+
+
+body.dark .bookmark {
+
+    color:
+        #777d8d;
+
+}
+
+
+body.dark .bookmark.saved {
+
+    color:
+        #ff4f69;
+
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 1050px) {
+
+    nav {
+
+        gap:
+            30px;
+
+        padding-left:
+            30px;
+
+    }
+
+}
+
+
+@media (max-width: 950px) {
+
+    .navbar {
+
+        padding:
+            0 4%;
+
+    }
+
+
+    nav {
+
+        gap:
+            22px;
+
+        padding-left:
+            20px;
+
+    }
+
+
+    .opportunity-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .navbar {
+
+        height:
+            auto;
+
+        min-height:
+            90px;
+
+        padding:
+            18px 5%;
+
+    }
+
+
+    .navbar-inner {
+
+        flex-wrap:
+            wrap;
+
+        gap:
+            15px;
+
+    }
+
+
+    .brand-text span {
+
+        display:
+            none;
+
+    }
+
+
+    .logo {
+
+        width:
+            48px;
+
+        height:
+            48px;
+
+    }
+
+
+    .brand-text h1 {
+
+        font-size:
+            25px;
+
+    }
+
+
+    nav {
+
+        order:
+            3;
+
+        width:
+            100%;
+
+        justify-content:
+            center;
+
+        margin:
+            0;
+
+        padding:
+            0;
+
+        gap:
+            25px;
+
+    }
+
+
+    nav a {
+
+        padding:
+            10px 0;
+
+        font-size:
+            13px;
+
+    }
+
+
+    nav a.active::after {
+
+        bottom:
+            2px;
+
+    }
+
+
+
+    .page-hero {
+
+        padding:
+            65px 0 45px;
+
+    }
+
+
+    .page-hero h2 {
+
+        letter-spacing:
+            -2px;
+
+    }
+
+
+    .page-hero p {
+
+        font-size:
+            14px;
+
+    }
+
+
+    .search-container {
+
+        flex-direction:
+            column;
+
+    }
+
+
+    .filter-button {
+
+        justify-content:
+            center;
+
+    }
+
+
+    .filters {
+
+        overflow-x:
+            auto;
+
+        padding-bottom:
+            5px;
+
+    }
+
+
+    .filter {
+
+        white-space:
+            nowrap;
+
+    }
+
+
+    .opportunity-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+}
+
+
+@media (min-width: 701px) {
+
+    .filter-button {
+
+        display:
+            none;
+
+    }
+
+}
