@@ -1,0 +1,73 @@
+[
+    {
+        "id": 1,
+        "category": "Olympiad",
+        "title": "International Economics Olympiad",
+        "description": "Compete with talented students from around the world in economics and finance.",
+        "country": "Global",
+        "deadline": "2026-08-20",
+        "status": "Open",
+        "image": "images/opportunities/olympiad.jpg",
+        "website": "https://www.ieo-official.org"
+    },
+
+    {
+        "id": 2,
+        "category": "Research",
+        "title": "Research Program",
+        "description": "Join an international research project and strengthen your university portfolio.",
+        "country": "Online",
+        "deadline": "2026-09-15",
+        "status": "Open",
+        "image": "images/opportunities/research.jpg",
+        "website": "#"
+    },
+
+    {
+        "id": 3,
+        "category": "Summer School",
+        "title": "Economics Summer School",
+        "description": "Study economics with students from different countries during an intensive summer program.",
+        "country": "Singapore",
+        "deadline": "2026-10-05",
+        "status": "Open",
+        "image": "images/opportunities/summer.jpg",
+        "website": "#"
+    },
+
+    {
+        "id": 4,
+        "category": "Scholarship",
+        "title": "Future Leaders Scholarship",
+        "description": "Scholarship for ambitious high school students interested in economics.",
+        "country": "United Kingdom",
+        "deadline": "2026-11-10",
+        "status": "Coming Soon",
+        "image": "images/opportunities/scholarship.jpg",
+        "website": "#"
+    },
+
+    {
+        "id": 5,
+        "category": "Competition",
+        "title": "Business Case Challenge",
+        "description": "Solve real business cases and compete with international teams.",
+        "country": "Global",
+        "deadline": "2026-08-28",
+        "status": "Open",
+        "image": "images/opportunities/competition.jpg",
+        "website": "#"
+    },
+
+    {
+        "id": 6,
+        "category": "Internship",
+        "title": "Finance Internship",
+        "description": "Online internship introducing students to financial analysis and investing.",
+        "country": "Remote",
+        "deadline": "2026-12-12",
+        "status": "Open",
+        "image": "images/opportunities/internship.jpg",
+        "website": "#"
+    }
+]
