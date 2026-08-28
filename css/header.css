@@ -169,7 +169,7 @@ nav a.active::after{
 Theme Button
 ========================== */
 
-#themeToggle{
+.theme-toggle{
 
     width:52px;
 
@@ -191,7 +191,7 @@ Theme Button
 
 }
 
-#themeToggle:hover{
+.theme-toggle:hover{
 
     transform:translateY(-3px);
 
